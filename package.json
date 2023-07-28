@@ -1,16 +1,16 @@
 {
-  "name": "commentinobjectscript",
-  "displayName": "CommentInObjectScript",
+  "name": "commenttoobjectscript",
+  "displayName": "Comment to ObjectScript",
   "description": "",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.80.0"
   },
-  "publisher": "",
-  "icon": "./icon/icon.png",
+  "publisher": "BiiBridge",
+  "icon": "icon/icon.png",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/biibridge/CommentToObjectScript"
   },
   "enabledApiProposals": [
     "contribEditorContentMenu"
@@ -24,7 +24,7 @@
     "commands": [
       {
         "command": "objectScript.contextmenu.addComment",
-        "title": "%commentinobjectscript.addComment%"
+        "title": "%commenttoobjectscript.addComment%"
       }
     ],
     "keybindings": [
@@ -48,9 +48,9 @@
       {
         "title": "Creater's Name",
         "properties": {
-          "commentinobjectscript.createrName": {
+          "commenttoobjectscript.createrName": {
             "type": "string",
-            "description": "%commentinobjectscript.createrName%",
+            "description": "%commenttoobjectscript.createrName%",
             "default": "Creater Name"
           }
         }
@@ -58,9 +58,9 @@
       {
         "title": "Class Comment",
         "properties": {
-          "commentinobjectscript.commentClass": {
+          "commenttoobjectscript.commentClass": {
             "type": "string",
-            "description": "%commentinobjectscript.classComment%",
+            "description": "%commenttoobjectscript.classComment%",
             "editPresentation": "multilineText",
             "default": "/// <b>  </b> : ${nowDate} ${nowTime} : ${createrName}<br/>\n/// <br/>\n/// <span style='font-size: small'>Copyright &copy; 2020 default inc. All Rights Reserved.</span>"
           }
@@ -69,9 +69,9 @@
       {
         "title": "Method Comment",
         "properties": {
-          "commentinobjectscript.commentMethod": {
+          "commenttoobjectscript.commentMethod": {
             "type": "string",
-            "description": "%commentinobjectscript.methodComment%",
+            "description": "%commenttoobjectscript.methodComment%",
             "editPresentation": "multilineText",
             "default": "/// Description : ${nowDate} ${nowTime} : ${createrName}<br/>"
           }
@@ -80,9 +80,9 @@
       {
         "title": "Add arguments to method comment",
         "properties": {
-          "commentinobjectscript.commentMethodAddArguments": {
+          "commenttoobjectscript.commentMethodAddArguments": {
             "type": "boolean",
-            "description": "%commentinobjectscript.addArgument%",
+            "description": "%commenttoobjectscript.addArgument%",
             "default": true
           }
         }
@@ -90,9 +90,9 @@
       {
         "title": "Parameter Comment",
         "properties": {
-          "commentinobjectscript.commentParameter": {
+          "commenttoobjectscript.commentParameter": {
             "type": "string",
-            "description": "%commentinobjectscript.parameterComment%",
+            "description": "%commenttoobjectscript.parameterComment%",
             "editPresentation": "multilineText",
             "default": "/// Description : ${nowDate} ${nowTime} : ${createrName}"
           }
@@ -101,9 +101,9 @@
       {
         "title": "Property Comment",
         "properties": {
-          "commentinobjectscript.commentProperty": {
+          "commenttoobjectscript.commentProperty": {
             "type": "string",
-            "description": "%commentinobjectscript.propertyComment%",
+            "description": "%commenttoobjectscript.propertyComment%",
             "editPresentation": "multilineText",
             "default": "/// Description : ${nowDate} ${nowTime} : ${createrName}"
           }
@@ -112,9 +112,9 @@
       {
         "title": "Index Comment",
         "properties": {
-          "commentinobjectscript.commentIndex": {
+          "commenttoobjectscript.commentIndex": {
             "type": "string",
-            "description": "%commentinobjectscript.indexComment%",
+            "description": "%commenttoobjectscript.indexComment%",
             "editPresentation": "multilineText",
             "default": "/// Description : ${nowDate} ${nowTime} : ${createrName}"
           }

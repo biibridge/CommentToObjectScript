@@ -1,11 +1,11 @@
 {
-    "commentinobjectscript.addComment": "コメントの追加",
-    "commentinobjectscript.createrName": "作成者名",
-    "commentinobjectscript.classComment": "クラスの説明",
-    "commentinobjectscript.methodComment": "メソッドの説明",
-    "commentinobjectscript.addArgument": "引数の追加",
-    "commentinobjectscript.parameterComment": "パラメーターの説明",
-    "commentinobjectscript.propertyComment": "プロパティーの説明",
-    "commentinobjectscript.indexComment": "インデックスの説明"
+    "commenttoobjectscript.addComment": "コメントの追加",
+    "commenttoobjectscript.createrName": "作成者名",
+    "commenttoobjectscript.classComment": "クラスの説明",
+    "commenttoobjectscript.methodComment": "メソッドの説明",
+    "commenttoobjectscript.addArgument": "引数の追加",
+    "commenttoobjectscript.parameterComment": "パラメーターの説明",
+    "commenttoobjectscript.propertyComment": "プロパティーの説明",
+    "commenttoobjectscript.indexComment": "インデックスの説明"
 
 }

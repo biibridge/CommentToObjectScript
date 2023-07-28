@@ -32,7 +32,7 @@ export function activate(context: vscode.ExtensionContext) {
 				const now = new Date();
 				const nowDate = now.getFullYear()+"/"+String(100 + (now.getMonth() + 1)).substring(1)+"/"+String(100 + now.getDate()).substring(1);
 				const nowTime = String(100 + now.getHours()).substring(1)+":"+String(100 + now.getMinutes()).substring(1);
-				const config = vscode.workspace.getConfiguration("commentinobjectscript");
+				const config = vscode.workspace.getConfiguration("commenttoobjectscript");
 				const createrName = config.get<string>("createrName");
 				const copyright = config.get<string>("copyright");
 				let comment: string = "";
