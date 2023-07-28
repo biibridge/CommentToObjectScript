@@ -6,6 +6,15 @@
   "engines": {
     "vscode": "^1.80.0"
   },
+  "publisher": "",
+  "icon": "./icon/icon.png",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "enabledApiProposals": [
+    "contribEditorContentMenu"
+  ],
   "categories": [
     "Other"
   ],
@@ -14,8 +23,102 @@
   "contributes": {
     "commands": [
       {
-        "command": "commentinobjectscript.helloWorld",
-        "title": "Hello World"
+        "command": "objectScript.contextmenu.addComment",
+        "title": "%commentinobjectscript.addComment%"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "objectScript.contextmenu.addComment",
+        "key": "ctrl+shift+c",
+        "mac": "ctrl+shift+c",
+        "when": "editorTextFocus && editorLangId == objectscript-class"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorTextFocus && editorLangId == objectscript-class",
+          "command": "objectScript.contextmenu.addComment",
+          "group": "BBComInObjScriotGroup@1"
+        }
+      ]
+    },
+    "configuration": [
+      {
+        "title": "Creater's Name",
+        "properties": {
+          "commentinobjectscript.createrName": {
+            "type": "string",
+            "description": "%commentinobjectscript.createrName%",
+            "default": "Creater Name"
+          }
+        }
+      },
+      {
+        "title": "Class Comment",
+        "properties": {
+          "commentinobjectscript.commentClass": {
+            "type": "string",
+            "description": "%commentinobjectscript.classComment%",
+            "editPresentation": "multilineText",
+            "default": "/// <b>  </b> : ${nowDate} ${nowTime} : ${createrName}<br/>\n/// <br/>\n/// <span style='font-size: small'>Copyright &copy; 2020 default inc. All Rights Reserved.</span>"
+          }
+        }
+      },
+      {
+        "title": "Method Comment",
+        "properties": {
+          "commentinobjectscript.commentMethod": {
+            "type": "string",
+            "description": "%commentinobjectscript.methodComment%",
+            "editPresentation": "multilineText",
+            "default": "/// Description : ${nowDate} ${nowTime} : ${createrName}<br/>"
+          }
+        }
+      },
+      {
+        "title": "Add arguments to method comment",
+        "properties": {
+          "commentinobjectscript.commentMethodAddArguments": {
+            "type": "boolean",
+            "description": "%commentinobjectscript.addArgument%",
+            "default": true
+          }
+        }
+      },
+      {
+        "title": "Parameter Comment",
+        "properties": {
+          "commentinobjectscript.commentParameter": {
+            "type": "string",
+            "description": "%commentinobjectscript.parameterComment%",
+            "editPresentation": "multilineText",
+            "default": "/// Description : ${nowDate} ${nowTime} : ${createrName}"
+          }
+        }
+      },
+      {
+        "title": "Property Comment",
+        "properties": {
+          "commentinobjectscript.commentProperty": {
+            "type": "string",
+            "description": "%commentinobjectscript.propertyComment%",
+            "editPresentation": "multilineText",
+            "default": "/// Description : ${nowDate} ${nowTime} : ${createrName}"
+          }
+        }
+      },
+      {
+        "title": "Index Comment",
+        "properties": {
+          "commentinobjectscript.commentIndex": {
+            "type": "string",
+            "description": "%commentinobjectscript.indexComment%",
+            "editPresentation": "multilineText",
+            "default": "/// Description : ${nowDate} ${nowTime} : ${createrName}"
+          }
+        }
       }
     ]
   },

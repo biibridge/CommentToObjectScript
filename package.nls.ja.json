@@ -1,0 +1,11 @@
+{
+    "commentinobjectscript.addComment": "コメントの追加",
+    "commentinobjectscript.createrName": "作成者名",
+    "commentinobjectscript.classComment": "クラスの説明",
+    "commentinobjectscript.methodComment": "メソッドの説明",
+    "commentinobjectscript.addArgument": "引数の追加",
+    "commentinobjectscript.parameterComment": "パラメーターの説明",
+    "commentinobjectscript.propertyComment": "プロパティーの説明",
+    "commentinobjectscript.indexComment": "インデックスの説明"
+
+}
