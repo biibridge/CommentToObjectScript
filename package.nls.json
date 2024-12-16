@@ -4,6 +4,8 @@
     "commenttoobjectscript.classComment": "Class Comment",
     "commenttoobjectscript.methodComment": "Method Comment",
     "commenttoobjectscript.addArgument": "Add Arguments",
+    "commenttoobjectscript.argumentFormat": "Argument Description Format\nThe line containing '${argmentName}' is repeated as many times as there are arguments.",
+    "commenttoobjectscript.returnFormat": "Return Description Format",
     "commenttoobjectscript.parameterComment": "Parameter Comment",
     "commenttoobjectscript.propertyComment": "Property Comment",
     "commenttoobjectscript.indexComment": "Index Comment"

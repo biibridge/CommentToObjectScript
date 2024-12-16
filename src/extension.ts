@@ -70,45 +70,74 @@ export function activate(context: vscode.ExtensionContext) {
 					let ret = dat.substring(dat.indexOf(")"));
 
 					if (argFlg) {
+						let wformats = config.get<string>("commentMethodArgumentsFormat") || "";
+						let formats = wformats.split("\n");
+						let firstCmt: string = "";
+						let endCmt: string = "";
+						let argment: string = "";
+						let start: boolean = true;
+						formats.map((fm: string) => {
+							if (fm.indexOf("${argmentName}") !== -1) {
+								start = false;
+								argment = argment + `${fm}\n`;
+							} else {
+								if (start) {
+									firstCmt = firstCmt + `${fm}\n`;
+								} else {
+									endCmt = endCmt + `${fm}\n`;
+								}
+							}
+						});
+						
+						if (firstCmt) {
+							comment = comment + firstCmt;
+						}
+						
 						const args = dat.substring(0, dat.length - ret.length).split(",");
 						ret = ret.replace(")", "");
 
-						let f: boolean = false;
 						for (let i = 0; i < args.length; i++) {
 							let arg = args[i];
 							arg = arg.replace(/^\s+|\s+$/g,'');
-							if (arg != "") {
-								if (!f) {
-									f = true;
-									comment = comment+"/// Parameters:<br>\n/// <ul>\n";
-								}
+							if (arg !== "") {
 								let args = arg.split(" ");
-								let argnm = args[0];
+								let argmentName = args[0];
 								let p = 2;
-								if (argnm.toLowerCase() == "byref") {
-									argnm = args[1];
+								if (argmentName.toLowerCase() === "byref") {
+									argmentName = args[1];
 									p = 3;
 								}
-								let argType = "";
+								let argumentType = "";
 								let defalt = "";
 								if (args.length > 2) {
-									argType = ": <class>"+args[p]+"</class>";
+									argumentType = "<class>"+args[p]+"</class>";
 								}
 								if (arg.indexOf("=") > 0) {
 									let wdat = arg.substring(arg.indexOf("=")+1).trim();
-									defalt = " (初期値："+wdat+")";
+									defalt = wdat;
 								}
-								comment = comment+"///  <li>"+argnm+argType+defalt+"</li>\n";
+								const params = {
+									"argmentName": argmentName,
+									"argumentType": argumentType,
+									"default": defalt
+								};
+								comment = comment + common.replaceTextParameters(argment, params);
 							}
 						}
-						if (f) {
-							comment = comment+"/// </ul>\n";
+						
+						if (endCmt) {
+							comment = comment + endCmt;
 						}
 					}
 					
-					if (ret != "") {
+					if (ret !== "") {
 						let rets = ret.replace(/^\s+|\s+$/g,'').split(" ");
-						comment = comment+"/// Returns: <br>\n///  <class>"+rets[1]+"</class>\n";
+						let formats = config.get<string>("commentMethodReturnFormat") || "";
+						formats = formats.trim()+"\n";
+						const params = {
+							"returnType": `<class>${rets[1]}</class>`
+						};
+						comment = comment + common.replaceTextParameters(formats, params);
 					}
 				}
 

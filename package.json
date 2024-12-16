@@ -74,16 +74,23 @@
             "description": "%commenttoobjectscript.methodComment%",
             "editPresentation": "multilineText",
             "default": "/// Description : ${nowDate} ${nowTime} : ${createrName}<br/>"
-          }
-        }
-      },
-      {
-        "title": "Add arguments to method comment",
-        "properties": {
+          },
           "commenttoobjectscript.commentMethodAddArguments": {
             "type": "boolean",
             "description": "%commenttoobjectscript.addArgument%",
             "default": true
+          },
+          "commenttoobjectscript.commentMethodArgumentsFormat": {
+            "type": "string",
+            "description": "%commenttoobjectscript.argumentFormat%",
+            "editPresentation": "multilineText",
+            "default": "/// Parameters:<br>\n/// <ul>\n///  <li>${argmentName}: ${argumentType} (初期値：${default})</li>\n/// </ul>"
+          },
+          "commenttoobjectscript.commentMethodReturnFormat": {
+            "type": "string",
+            "description": "%commenttoobjectscript.returnFormat%",
+            "editPresentation": "multilineText",
+            "default": "/// Return:<br>\n///  ${returnType}"
           }
         }
       },

@@ -21,3 +21,11 @@ Fixed phrases can be freely specified from the settings.
 ![method](https://github.com/biibridge/CommentToObjectScript/blob/main/images/movie_03.gif?raw=true)
 
 You can control whether or not there is an explanation for the argument depending on the value of "Comment Method Add Arguments" from the settings.
+
+#### History
+
+version 1.0.0
+
+The format of the method description has become more flexible.  
+```${argumentName}``` represents the argument name, ```${argumentType}``` represents the argument type, and ```${default}``` represents the initial value.  
+In "Comment To ObjectScript", the line containing ```${argumentName}``` is repeated for each argument.

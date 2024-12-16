@@ -4,6 +4,8 @@
     "commenttoobjectscript.classComment": "クラスの説明",
     "commenttoobjectscript.methodComment": "メソッドの説明",
     "commenttoobjectscript.addArgument": "引数の追加",
+    "commenttoobjectscript.argumentFormat": "引数の説明のフォーマット\n'${argmentName}'を含む行が、引数の数だけ繰り返されます。",
+    "commenttoobjectscript.returnFormat": "戻り値の説明のフォーマット",
     "commenttoobjectscript.parameterComment": "パラメーターの説明",
     "commenttoobjectscript.propertyComment": "プロパティーの説明",
     "commenttoobjectscript.indexComment": "インデックスの説明"
